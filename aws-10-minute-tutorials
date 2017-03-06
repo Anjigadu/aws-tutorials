@@ -1,0 +1,13 @@
+AWS Tutorials:
+==============
+/*
+S3 
+*/ 
+
+creating a bucket:
+-------------------
+S3 > Create bucket > unique name + region > create
+bucket > select > upload > upload file or drag n drop
+
+Backup Files to Amazon S3 using the AWS CLI
+---------------------------------------------
