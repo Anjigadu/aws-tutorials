@@ -1,0 +1,34 @@
+Launch a Linux Virtual Machine
+===============================
+Step 1: Launch an Amazon EC2 Instance
+EC2 console > launch instance
+
+Step 2: Configure your Instance
+a. Amazon Linux AMI
+b. t2.micro > default options
+c. review and launch 
+d. create new key pair > "MyKeyPair" > Download key pair
+Windows users: We recommend saving your key pair in your user directory in a sub-directory called .ssh (ex. C:\user\{yourusername}\.ssh\MyKeyPair.pem).
+Mac/Linux users: We recommend saving your key pair in the .ssh sub-directory from your home directory (ex. ~/.ssh/MyKeyPair.pem).
+Note: On Mac, the key pair is downloaded to your Downloads directory by default. 
+To move the key pair into the .ssh sub-directory, enter the following command in a terminal window: mv ~/Downloads/MyKeyPair.pem ~/.ssh/MyKeyPair.pem
+
+click Launch instance
+
+e. EC2 > View instances
+f. make note of public ip address of the new instance
+
+Step 3: Connect to your Instance
+Windows users:  Select Windows below to see instructions for installing Git Bash.
+Mac/Linux user: Select Mac / Linux below to see instructions for opening a terminal window.
+
+a. instructions to install git bash
+b. open git bash to run ssh command
+c. connect to your instance
+
+Windows users: Enter ssh -i 'c:\Users\yourusername\.ssh\MyKeyPair.pem' ec2-user@{IP_Address} (ex. ssh -i 'c:\Users\adamglic\.ssh\MyKeyPair.pem' ec2-user@52.27.212.125)
+Mac/Linux users: Enter ssh -i ~/.ssh/MyKeyPair.pem ec2-user@{IP_Address} (ex. ssh -i ~/.ssh/MyKeyPair.pem ec2-user@52.27.212.125)
+
+Note: if you started a Linux instance that isn't Amazon Linux, there may by a different user name that is used. 
+common user names include ec2-user, root, ubuntu, and fedora. 
+If you are unsure what the login user name is, check with your AMI provider.
