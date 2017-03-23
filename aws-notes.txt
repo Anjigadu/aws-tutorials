@@ -36,3 +36,33 @@ steps to creating a read replica:
 3. Create read replica using CreateDBInstanceReadReplica API
 4. Check progress of replication using DescribeDBInstance API
 5. Once replica is available unlock tables and resume normal database operations
+
+CloudFront - Alternate Domain Names:
+-------------------------------------
+/images/image.jpg > http://www.mydomain.com/images/image.jpg
+instead of http://d111111abcdef8.cloudfront.net/images/image.jpg
+
+1. add CNAME for www.mydomain.com to your distribution
+2.update or cretae CNAME record with your DNS service to route queries
+
+
+Elasticity:
+----------
+3 ways of implementing:
+1. Proactive cycle scaling - periodic scaling that occurs at fixed intervals (daily, weekly, monthly, quarterly)
+2. Proactive event based scaling - scaling based on event like a big surge of traffic requests due to a scheduled business event (new product launc, marketing campaigns, etc.)
+3. Auto-scaling based on demand: by using a monitoring service, your system can send triggers to take appropriate actions, scale up or down based on metrics (utilization of servers, network I/O)
+
+
+Instance stores:
+-------------------
+Data on instance stores persists only during life of the instance
+If an instance reboots then data persists
+
+Data is lost under following scenarios:
+- Failure of an underlying drive
+- Stopping and Amazon EBS backed instance
+- Terminating an instance
+
+Therefore, do not rely on instance store volumes for long term data 
+instead keep replication strategy across multiple instances, storing data on S3 or using EBS volumes
