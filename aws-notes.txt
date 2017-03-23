@@ -1,0 +1,19 @@
+Limits:
+======
+VPCs per region: 5
+Subnets per VPC: 200
+IGW per region: 5
+VGW per region: 5
+CGW per region: 50
+VPN connections per region: 50
+Route tables per VPC: 200 (including main route table)
+Entries per route table: 50
+EIP per region for each account: 5
+Security groups per VPC: 100
+Rules per security group: 50 (per network interface max limit: 250)
+Security groups per network interface: 5
+Network ACLs per VPC: 200
+Rules per ACL: 20
+BGP advertised routes per VPN Connection: 100
+Active VPC peering connections per VPC: 50
+Outstanding VPC peering connection requests: 25
