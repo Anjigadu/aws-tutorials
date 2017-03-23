@@ -17,3 +17,22 @@ Rules per ACL: 20
 BGP advertised routes per VPN Connection: 100
 Active VPC peering connections per VPC: 50
 Outstanding VPC peering connection requests: 25
+
+
+IAM:
+----
+Interfaces:
+1. AWS management console
+2. CLI
+3. IAM Query API
+4. Existing Libraries
+
+
+MyISAM (non transaction db)
+---------------------------
+steps to creating a read replica:
+1. stop all DDL and DML operations on non transactional tables and wait for them to complete. SELECT statement can continue running
+2. Flush and lock those tables
+3. Create read replica using CreateDBInstanceReadReplica API
+4. Check progress of replication using DescribeDBInstance API
+5. Once replica is available unlock tables and resume normal database operations
